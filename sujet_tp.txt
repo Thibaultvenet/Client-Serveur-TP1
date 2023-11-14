@@ -1,0 +1,41 @@
+TP : Création d'un Serveur Node.js avec Communication API ChatGPT
+Objectif :
+Créer un serveur Node.js qui permet de récupérer des données depuis un formulaire HTML (nom, prénom, email, recherche), enregistrer ces données dans un fichier JSON, et communiquer avec l'API de ChatGPT pour obtenir des réponses aux requêtes de recherche.
+
+Étapes :
+Initialisation du Projet :
+
+Crée un nouveau dossier pour ton projet.
+Initialise le projet avec npm init pour créer le fichier package.json.
+Installe les dépendances nécessaires : express, body-parser, axios (pour la communication avec l'API de ChatGPT).
+Création du Serveur Node.js :
+
+Crée un fichier server.js.
+Utilise Express pour créer un serveur.
+Configure le serveur pour utiliser body-parser afin de traiter les données du formulaire.
+
+Création du Formulaire HTML :
+Crée un fichier index.html contenant un formulaire avec les champs nécessaires (nom, prénom, email, recherche).
+Définis une action pour le formulaire qui enverra les données au serveur.
+
+Traitement des Données :
+Dans server.js, ajoute une route pour traiter les données du formulaire.
+Récupère les données du formulaire et enregistre-les dans un fichier JSON.
+Communication avec l'API de ChatGPT :
+
+Obtient une clé d'API de ChatGPT (si tu n'en as pas déjà une).
+Utilise Axios pour faire une requête à l'API de ChatGPT avec le texte de recherche.
+Enregistre la réponse dans le fichier JSON.
+Gestion des Erreurs :
+
+Ajoute des gestionnaires d'erreurs pour les requêtes au serveur et à l'API de ChatGPT.
+
+Remarques :
+Assure-toi d'utiliser des variables d'environnement pour stocker les clés d'API de manière sécurisée.
+Documente bien ton code et explique chaque étape du processus.
+Teste soigneusement ton application pour t'assurer que tout fonctionne correctement.
+
+Ressources Utiles :
+Express.js
+Axios
+Body-parser

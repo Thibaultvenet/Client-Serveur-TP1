@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+</head>
+<body>
+    <form id="myForm">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="recherche">Recherche :</label>
+        <input type="text" id="recherche" name="recherche" required><br>
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <div id="response-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('myForm');
+            const responseContainer = document.getElementById('response-container');
+
+            form.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const formData = new URLSearchParams(new FormData(form));
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                });
+
+                const responseData = await response.json();
+
+                responseContainer.textContent = `Réponse de ChatGPT : ${responseData.response}`;
+            });
+        });
+    </script>
+</body>
+</html>
